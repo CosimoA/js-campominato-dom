@@ -10,12 +10,10 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 // SELEZIONO ELEMENTI UTILI IN HTML & VARIABILI PREIMPOSTATE
 const bottone = document.getElementById("btn");
 const container = document.getElementById("general-container");
+let contatore = 0;
 // CREO ARRAY PER LE 16 BOMBE
 const bombe = creaArrRandomNum(1, 100, 16);
 console.log(bombe);
-// CREO ARRAY PER LA CONTA DEI PUNTI
-const punti = [];
-
 
 // AL CLICK SUL BOTTONE INSERISCO ELEMENTO SQUARE ALLINTERNO DEL CONTAINER
 bottone.addEventListener("click", 
@@ -30,10 +28,16 @@ bottone.addEventListener("click",
             // AL CLICK SULL'ELEMENTO SQUARE
             quadrato.addEventListener("click",
                 function(){
-                    // AGGIUNGO ALL'ELEMENTO CLICCATO LA CLASSE
-                    quadrato.classList.add("bg-salvo");
-                    // OUTPUT IN CONSOLE DEL NUMERO CLICCATO
-                    console.log("Hai selezionato la cella " + i);  
+                    // if(){
+                        // console.log("Hai schiacciato una bomba " + i);
+                    // } else {
+                        // AGGIUNGO ALL'ELEMENTO CLICCATO LA CLASSE
+                        quadrato.classList.add("bg-salvo");
+                        // OUTPUT IN CONSOLE DEL NUMERO CLICCATO
+                        console.log("Hai selezionato la cella " + i);
+                        contatore++;
+                        console.log("Totale punti " + contatore);
+                    // }
                 }
             )   
         }
@@ -66,6 +70,7 @@ function creaArrRandomNum(minNum, maxNumm, lunghezza){
     }
     return arrayRandom;
 }
+
 
 
     
