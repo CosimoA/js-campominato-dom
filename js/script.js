@@ -28,21 +28,25 @@ bottone.addEventListener("click",
             // AL CLICK SULL'ELEMENTO SQUARE
             quadrato.addEventListener("click",
                 function(){
-                    // if(){
-                        // console.log("Hai schiacciato una bomba " + i);
-                    // } else {
+                    if(bombe.includes(i)){
+                        quadrato.classList.add("bg-bomba");
+                        console.log("Hai schiacciato una bomba " + i);
+                        console.log("Totale punti " + contatore);
+                        alert("Hai schiacciato una BOMBA!");
+                    } else {
                         // AGGIUNGO ALL'ELEMENTO CLICCATO LA CLASSE
                         quadrato.classList.add("bg-salvo");
                         // OUTPUT IN CONSOLE DEL NUMERO CLICCATO
                         console.log("Hai selezionato la cella " + i);
                         contatore++;
-                        console.log("Totale punti " + contatore);
-                    // }
+                    }
                 }
             )   
         }
     }
 );
+
+
 
 // ---------------------FUNZIONI---------------------
 
